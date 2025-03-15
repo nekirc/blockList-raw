@@ -1,6 +1,6 @@
 /system script
 add name="dl-dshield-recommended" source={
-    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklistsdshield-recommended.rsc" mode=https dst-path=dshield-recommended.rsc
+    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklists/dshield-recommended.rsc" mode=https dst-path=dshield-recommended.rsc
     :if ([:len [/file get dshield-recommended.rsc contents]] > 0) do={
         :log info "Downloaded dshield-recommended.rsc successfully"
     } else={
@@ -10,7 +10,7 @@ add name="dl-dshield-recommended" source={
 }
 add name="replace-dshield-recommended" source={/ip firewall address-list remove [find where list="dshield-recommended"]; /import file-name=dshield-recommended.rsc; /file remove dshield-recommended.rsc}
 add name="dl-blocklist-de" source={
-    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklistsblocklist-de.rsc" mode=https dst-path=blocklist-de.rsc
+    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklists/blocklist-de.rsc" mode=https dst-path=blocklist-de.rsc
     :if ([:len [/file get blocklist-de.rsc contents]] > 0) do={
         :log info "Downloaded blocklist-de.rsc successfully"
     } else={
@@ -20,7 +20,7 @@ add name="dl-blocklist-de" source={
 }
 add name="replace-blocklist-de" source={/ip firewall address-list remove [find where list="blocklist-de"]; /import file-name=blocklist-de.rsc; /file remove blocklist-de.rsc}
 add name="dl-firehol-abusers-1d" source={
-    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklistsfirehol-abusers-1d.rsc" mode=https dst-path=firehol-abusers-1d.rsc
+    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklists/firehol-abusers-1d.rsc" mode=https dst-path=firehol-abusers-1d.rsc
     :if ([:len [/file get firehol-abusers-1d.rsc contents]] > 0) do={
         :log info "Downloaded firehol-abusers-1d.rsc successfully"
     } else={
@@ -30,7 +30,7 @@ add name="dl-firehol-abusers-1d" source={
 }
 add name="replace-firehol-abusers-1d" source={/ip firewall address-list remove [find where list="firehol-abusers-1d"]; /import file-name=firehol-abusers-1d.rsc; /file remove firehol-abusers-1d.rsc}
 add name="dl-spamhaus-drop" source={
-    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklistsspamhaus-drop.rsc" mode=https dst-path=spamhaus-drop.rsc
+    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklists/spamhaus-drop.rsc" mode=https dst-path=spamhaus-drop.rsc
     :if ([:len [/file get spamhaus-drop.rsc contents]] > 0) do={
         :log info "Downloaded spamhaus-drop.rsc successfully"
     } else={
@@ -40,7 +40,7 @@ add name="dl-spamhaus-drop" source={
 }
 add name="replace-spamhaus-drop" source={/ip firewall address-list remove [find where list="spamhaus-drop"]; /import file-name=spamhaus-drop.rsc; /file remove spamhaus-drop.rsc}
 add name="dl-feodo-recommended" source={
-    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklistsfeodo-recommended.rsc" mode=https dst-path=feodo-recommended.rsc
+    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklists/feodo-recommended.rsc" mode=https dst-path=feodo-recommended.rsc
     :if ([:len [/file get feodo-recommended.rsc contents]] > 0) do={
         :log info "Downloaded feodo-recommended.rsc successfully"
     } else={
@@ -50,7 +50,7 @@ add name="dl-feodo-recommended" source={
 }
 add name="replace-feodo-recommended" source={/ip firewall address-list remove [find where list="feodo-recommended"]; /import file-name=feodo-recommended.rsc; /file remove feodo-recommended.rsc}
 add name="dl-firehol-level1" source={
-    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklistsfirehol-level1.rsc" mode=https dst-path=firehol-level1.rsc
+    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklists/firehol-level1.rsc" mode=https dst-path=firehol-level1.rsc
     :if ([:len [/file get firehol-level1.rsc contents]] > 0) do={
         :log info "Downloaded firehol-level1.rsc successfully"
     } else={
@@ -60,7 +60,7 @@ add name="dl-firehol-level1" source={
 }
 add name="replace-firehol-level1" source={/ip firewall address-list remove [find where list="firehol-level1"]; /import file-name=firehol-level1.rsc; /file remove firehol-level1.rsc}
 add name="dl-firehol-blocklist-net-ua" source={
-    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklistsfirehol-blocklist-net-ua.rsc" mode=https dst-path=firehol-blocklist-net-ua.rsc
+    /tool fetch url="https://raw.githubusercontent.com/nekirc/blockList-raw/refs/heads/main/blocklists/firehol-blocklist-net-ua.rsc" mode=https dst-path=firehol-blocklist-net-ua.rsc
     :if ([:len [/file get firehol-blocklist-net-ua.rsc contents]] > 0) do={
         :log info "Downloaded firehol-blocklist-net-ua.rsc successfully"
     } else={
