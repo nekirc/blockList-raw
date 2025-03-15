@@ -59,6 +59,16 @@ add name="dl-firehol-level1" source={
     }
 }
 add name="replace-firehol-level1" source={/ip firewall address-list remove [find where list="firehol-level1"]; /import file-name=firehol-level1.rsc; /file remove firehol-level1.rsc}
+add name="dl-firehol-blocklist-net-ua" source={
+    /tool fetch url="https://github.com/nekirc/blockList-raw/main/blockList-raw/blocklists/firehol-blocklist-net-ua.rsc" mode=https dst-path=firehol-blocklist-net-ua.rsc
+    :if ([:len [/file get firehol-blocklist-net-ua.rsc contents]] > 0) do={
+        :log info "Downloaded firehol-blocklist-net-ua.rsc successfully"
+    } else={
+        :log error "Failed to download firehol-blocklist-net-ua.rsc"
+        /file remove firehol-blocklist-net-ua.rsc
+    }
+}
+add name="replace-firehol-blocklist-net-ua" source={/ip firewall address-list remove [find where list="firehol-blocklist-net-ua"]; /import file-name=firehol-blocklist-net-ua.rsc; /file remove firehol-blocklist-net-ua.rsc}
 
 /system scheduler
 add interval=1d name="dl-dshield-recommended-scheduled" start-time=00:05:00 on-event=dl-dshield-recommended
@@ -73,3 +83,5 @@ add interval=1d name="dl-feodo-recommended-scheduled" start-time=00:45:00 on-eve
 add interval=1d name="install-feodo-recommended-scheduled" start-time=00:50:00 on-event=replace-feodo-recommended
 add interval=1d name="dl-firehol-level1-scheduled" start-time=00:55:00 on-event=dl-firehol-level1
 add interval=1d name="install-firehol-level1-scheduled" start-time=00:60:00 on-event=replace-firehol-level1
+add interval=1d name="dl-firehol-blocklist-net-ua-scheduled" start-time=00:65:00 on-event=dl-firehol-blocklist-net-ua
+add interval=1d name="install-firehol-blocklist-net-ua-scheduled" start-time=00:70:00 on-event=replace-firehol-blocklist-net-ua
