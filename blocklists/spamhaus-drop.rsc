@@ -777,7 +777,6 @@
 /ip firewall address-list add list=spamhaus-drop address=185.212.240.0/22 comment="Spamhaus DROP List"
 /ip firewall address-list add list=spamhaus-drop address=185.215.113.0/24 comment="Spamhaus DROP List"
 /ip firewall address-list add list=spamhaus-drop address=185.215.132.0/22 comment="Spamhaus DROP List"
-/ip firewall address-list add list=spamhaus-drop address=185.222.56.0/22 comment="Spamhaus DROP List"
 /ip firewall address-list add list=spamhaus-drop address=185.230.44.0/22 comment="Spamhaus DROP List"
 /ip firewall address-list add list=spamhaus-drop address=185.232.45.0/24 comment="Spamhaus DROP List"
 /ip firewall address-list add list=spamhaus-drop address=185.237.104.0/24 comment="Spamhaus DROP List"
